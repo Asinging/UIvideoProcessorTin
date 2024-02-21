@@ -19,7 +19,7 @@ export default function Index(props) {
             <BrowserRouter>
                 {isLoggedIn ?
                     <Routes>
-                        <Route path="/video" element={<VideoList setLoggedIn={setLoggedIn}/>}>
+                        <Route path="/videos" element={<VideoList setLoggedIn={setLoggedIn}/>}>
                         </Route>
                         <Route path="/video/:id" element={<Video setLoggedIn={setLoggedIn}/>}>
                         </Route>

@@ -26,13 +26,16 @@ export default function SignIn(props) {
       email: formData.get('email'),
       password: formData.get('password')
     };
+   
     const { data } = await axios.post("http://localhost:3002/api/v1/user/signin", form);
+   
+    debugger
     if (data.status === parseInt('401')) {
       setErrorMessage(data.response)
     } else {
       localStorage.setItem('token', data.token);
       setIsLoggedIn(true)
-      navigate('/video')
+      navigate('/videos')
     }
 
   };
