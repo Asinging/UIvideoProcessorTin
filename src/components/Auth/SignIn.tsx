@@ -14,14 +14,14 @@ import { useNavigate } from "react-router-dom"
 
 const theme = createTheme();
 
-export default function SignIn(props) {
+export default function SignIn(props:any) {
   const { setIsLoggedIn } = props
   const [errrorMessage, setErrorMessage] = React.useState('')
   let navigate = useNavigate();
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event:any) => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(event.currentTarget)
     const form = {
       email: formData.get('email'),
       password: formData.get('password')
@@ -40,6 +40,7 @@ export default function SignIn(props) {
 
   };
   return (
+  
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -78,6 +79,7 @@ export default function SignIn(props) {
               id="password"
               autoComplete="current-password"
             />
+            {/* @ts-ignore */}
             <Typography component="p" variant="p" color="red">
               {errrorMessage}
             </Typography>
